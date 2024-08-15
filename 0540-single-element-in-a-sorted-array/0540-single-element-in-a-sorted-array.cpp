@@ -1,10 +1,10 @@
 class Solution {
 public:
     int singleNonDuplicate(vector<int>& nums) {
-        if (nums.size()==1) return nums[0];
         int l=0, r=nums.size()-1, m;
         while (l<=r) {
             m=l+(r-l)/2;
+            if (r==l) break;
             if (nums[m]!=nums[m-1] && nums[m]!=nums[m+1]) break;
             if (((r-l-1)/2+1)%2==0) {
                 if (nums[m+1]==nums[m]) l=m+2;
