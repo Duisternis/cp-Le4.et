@@ -5,7 +5,7 @@ public:
 
         while (l<=r) {
             m=l+(r-l)/2;
-            if (nums[m]>nums[m-1] && nums[m]>nums[m+1]) break;
+            if ((m==0 || nums[m]>nums[m-1]) && (m==nums.size()-1 || nums[m]>nums[m+1])) break;
             if (nums[m]<nums[m+1]) l=m+1;
             else r=m-1;
         }
